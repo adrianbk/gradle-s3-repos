@@ -7,12 +7,16 @@ A sample project to publish and resolve artifacts to/from AWS S3 via Gradle's ma
 ### Steps to publish and resolve
 
 - Build and install gradle from source:
-`./gradlew installAll -Pgradle_installPath=/gradledev`
+
+```./gradlew installAll -Pgradle_installPath=/gradledev```
 
 - Publish:
-`/gradledev/bin/gradle publish -i`
+
+```/gradledev/bin/gradle publish -i```
 
 - Resolve the published dependencies
-`/gradledev/bin/gradle compileJava`
+
+```/gradledev/bin/gradle compileJava```
+
   - __Note__ Gradle will cache the artifacts generated during execution of the publish task, manually delete the artifacts from the cache to
   force the dependencies to be downloaded from S3.

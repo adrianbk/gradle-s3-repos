@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+
+group = 'com.github.adrianbk.gradles3'
+version = '1.0-SNAPSHOT'
+
+publishing {
+  repositories {
+    maven {
+      url "s3://${System.getenv('G_S3_BUCKET')}/maven/SNAPSHOT/"
+      credentials(AwsCredentials) {
+        accessKey "${System.getenv('G_AWS_ACCESS_KEY_ID')}"
+        secretKey "${System.getenv('G_AWS_SECRET_ACCESS_KEY')}"
+      }
+    }
+    publications {
+      pub(MavenPublication) {
+        from components.java
+      }
+    }
+  }
+}

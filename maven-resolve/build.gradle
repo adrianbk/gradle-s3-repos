@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+repositories {
+  maven {
+    url "s3://${System.getenv('G_S3_BUCKET')}/maven/SNAPSHOT/"
+    credentials(AwsCredentials) {
+      accessKey "${System.getenv('G_AWS_ACCESS_KEY_ID')}"
+      secretKey "${System.getenv('G_AWS_SECRET_ACCESS_KEY')}"
+    }
+  }
+}
+
+dependencies{
+  compile 'com.github.adrianbk.gradles3:maven-publish:1.0-SNAPSHOT+'
+  compile 'com.github.adrianbk.gradles3:maven-publish-war:1.0-SNAPSHOT+'
+}
+
+

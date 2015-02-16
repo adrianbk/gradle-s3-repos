@@ -6,10 +6,6 @@ A sample project to publish and resolve artifacts to/from AWS S3 via Gradle's ma
 
 ### Steps to publish and resolve
 
-- Build and install gradle from source:
-
-```./gradlew installAll -Pgradle_installPath=/gradledev```
-
 - Publish:
 
 ```/gradledev/bin/gradle publish -i```

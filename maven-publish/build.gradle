@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 
@@ -8,7 +9,10 @@ version = '1.0-SNAPSHOT'
 publishing {
   repositories {
     maven {
-      url "s3://${System.getenv('G_S3_BUCKET')}/maven/SNAPSHOT/"
+//      url "s3://${System.getenv('G_S3_BUCKET')}/maven/SNAPSHOT/"
+//      url "s3://repo-germany.s3.eu-central-1.amazonaws.com/maven/SNAPSHOT/"
+      url "s3://repo-germany/maven/SNAPSHOT/"
+
       credentials(AwsCredentials) {
         accessKey "${System.getenv('G_AWS_ACCESS_KEY_ID')}"
         secretKey "${System.getenv('G_AWS_SECRET_ACCESS_KEY')}"

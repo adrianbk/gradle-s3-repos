@@ -2,3 +2,5 @@ rootProject.name = 'gradle-s3-repos'
 include 'maven-publish'
 include 'maven-publish-war'
 include 'maven-resolve'
+include 'aws-sdk-spike'
+

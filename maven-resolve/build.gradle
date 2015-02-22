@@ -10,7 +10,7 @@ repositories {
   }
 }
 
-dependencies{
+dependencies {
   compile 'com.github.adrianbk.gradles3:maven-publish:1.0-SNAPSHOT+'
   compile 'com.github.adrianbk.gradles3:maven-publish-war:1.0-SNAPSHOT+'
 }
